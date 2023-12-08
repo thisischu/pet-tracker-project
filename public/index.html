@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pet Tracker</title>
+    <script src="index.js" defer></script>
     <style>
       img {
         height: 15rem;
@@ -28,50 +29,64 @@
       }
     </style>
   </head>
+
   <body>
-    <h1>Pet Tracker</h1>
+    <main>
+      <h1>Pet Tracker</h1>
 
-    <form action="/submit" method="post">
-      <h2>Add a new Pet!</h2>
-      <label for="name">Pet Name*:</label>
-      <input type="text" id="name" name="name" required />
+      <form>
+        <h2>Add a new Pet!</h2>
 
-      <label for="profilePicture">Profile Picture*:</label>
-      <input type="url" id="profilePicture" name="profilePicture" required />
+        <section>
+          <label for="name">Pet Name*:</label>
+          <input type="text" id="name" name="name" required />
+        </section>
 
-      <label>Species</label>
-      <br />
-      <input
-        type="radio"
-        id="cat"
-        name="options"
-        value="cat"
-        required
-      />
-      <label for="cat">Cat</label>
+        <section>
+          <label for="profilePicture">Profile Picture*:</label>
+          <input
+            type="url"
+            id="profilePicture"
+            name="profilePicture"
+            required
+          />
+        </section>
 
-      <input
-        type="radio"
-        id="dog"
-        name="options"
-        value="dog"
-        required
-      />
-      <label for="dog">Dog</label>
+        <fieldset>
+          <legend>Species</legend>
+          <input type="radio" id="cat" name="options" value="cat" required />
+          <label for="cat">Cat</label>
+          <input type="radio" id="dog" name="options" value="dog" required />
+          <label for="dog">Dog</label>
+          <input
+            type="radio"
+            id="racoon"
+            name="options"
+            value="racoon"
+            required
+          />
+          <label for="racoon">Racoon</label>
+        </fieldset>
 
-      <input
-        type="radio"
-        id="racoon"
-        name="options"
-        value="racoon"
-        required
-      />
-      <label for="racoon">Racoon</label>
+        <section>
+          <input type="checkbox" id="friendly" name="friendly" />
+          <label for="friendly">Are They Friendly?</label>
+        </section>
 
-      <input type="checkbox" id="friendly" name="friendly" />
-      <label for="friendly">Are They Friendly?</label>
+        <button type="submit">Add Pet!</button>
+      </form>
 
-      <button type="submit">Add Pet!</button>
-    </form>
+      <h2>Pet List</h2>
+
+      <ul id="pet-list">
+        <li>
+          <h3>Name</h3>
+          <img src="img/racoon.jpg" alt="racoon" />
+          <p>Not so Friendly</p>
+          <p>Species: Racoon</p>
+          <button>Remove</button>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>
